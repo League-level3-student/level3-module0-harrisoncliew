@@ -18,15 +18,17 @@ public class MoreArrayFun {
 		for (int i = 0; i < word.length; i++) {
 			System.out.println(word[i]);
 		}
+		System.out.println();
 	}
 	
 	
 	//3. Write a method that takes an array of Strings and prints all the Strings in the array
 	//   in reverse order.
 	static void method2(String[] word) {
-		for (int i = word.length-1; i > 0; i--) {
+		for (int i = word.length-1; i >= 0; i--) {
 			System.out.println(word[i]);
 		}
+		System.out.println();
 	}
 	
 	
@@ -35,6 +37,7 @@ public class MoreArrayFun {
 		for (int i = 0; i < word.length; i+=2) {
 			System.out.println(word[i]);
 		}
+		System.out.println();
 	}
 	
 	//5. Write a method that takes an array of Strings and prints all the Strings in the array
@@ -44,13 +47,13 @@ public class MoreArrayFun {
 		boolean[] visited;
 		visited = new boolean[word.length];
 		for (int i = 0; i < visited.length; i++) {
-			visited[i] = false;
+			visited[i] = true;
 		}
 		for (int i = 0; i < word.length; i++) {
 			int randomIndex = r.nextInt(word.length);
-			if(!visited[randomIndex]) {
-				visited[randomIndex] = true;
-				System.out.println(word[i]);
+			if(visited[randomIndex]) {
+				visited[randomIndex] = false;
+				System.out.println(word[randomIndex]);
 			} else {
 				--i;
 			}
